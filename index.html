@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>산타 매뉴얼</title>
+	<style type="text/css">
+		img{display: block;}
+		body, html {margin: 0;padding: 0;height: 100%;background-color: #E6E6E6}
+		div{font-size: 1.5rem;line-height: 1.5;letter-spacing:00px; word-break: keep-all; text-align: center;}
+		.absolute{display: block;position: absolute;}
+		* {box-sizing: border-box}
+
+		/* Set height of body and the document to 100% */
+		body, html {
+		  height: 100%;
+		  margin: 0;
+		  font-family: Arial;
+		}
+
+		/* Style tab links */
+		.tablink {
+		  background-color: #c1272d;
+		  color: white;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  font-size: 1.3rem;
+		  width: 20%;
+
+		  transition: all 0.9s, color 0.3;
+		}
+
+		.santa:hover {
+		  background-color: #9e1d26;
+		 box-shadow: 0 80px 0 0 rgba(0,0,0,0.25) inset, 0 -80px 0 0 rgba(0,0,0,0.25) inset;
+		}
+
+		/* Style the tab content (and add height:100% for full page content) */
+		.tabcontent {
+		  color: black
+		  display: none;
+		  padding: 100px 20px;
+		  height: 100%;
+		}
+
+		#home {background-color: #E6E6E6;}
+		#1223 {background-color: #E6E6E6;}
+		#1224 {background-color: #E6E6E6;}
+		#1225 {background-color: #E6E6E6;}
+		#1226 {background-color: #E6E6E6;}
+
+		
+	</style>
+</head>
+<body>
+	<button class="tablink santa" onclick="openPage('Home', this, '#E6E6E6')" id="defaultOpen">Home</button>
+	<button class="tablink" onclick="openPage('1223', this, '#E6E6E6')">1223</button>
+	<button class="tablink" onclick="openPage('1224', this, '#E6E6E6')">1224</button>
+	<button class="tablink" onclick="openPage('1225', this, '#E6E6E6')">1225</button>
+	<button class="tablink" onclick="openPage('1226', this, '#E6E6E6')">1226</button>
+
+	<div id="Home" class="tabcontent">
+	  <h3></h3>
+	  <img src="20210527.gif">
+	  <p></p>
+	</div>
+
+	<div id="1223" class="tabcontent">
+	  <h3></h3>
+	  <img src="1223.gif">
+	  <p></p> 
+	</div>
+
+	<div id="1224" class="tabcontent">
+	  <h3></h3>
+	  <img src="1224.gif">
+	  <p></p>
+	</div>
+
+	<div id="1225" class="tabcontent">
+	  <h3></h3>
+	  <img src="1225.gif">
+	  <p></p>
+	</div>
+
+	<div id="1226" class="tabcontent">
+	  <h3></h3>
+	  <img src="1226.gif">
+	  <p></p>
+	</div>
+
+	<script>
+	function openPage(pageName,elmnt,color) {
+	  var i, tabcontent, tablinks;
+	  tabcontent = document.getElementsByClassName("tabcontent");
+	  for (i = 0; i < tabcontent.length; i++) {
+	    tabcontent[i].style.display = "none";
+	  }
+	  tablinks = document.getElementsByClassName("tablink");
+	  for (i = 0; i < tablinks.length; i++) {
+	    tablinks[i].style.backgroundColor = "";
+	  }
+	  document.getElementById(pageName).style.display = "block";
+	  elmnt.style.backgroundColor = color;
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+	</script>
+</body>
+</html>
